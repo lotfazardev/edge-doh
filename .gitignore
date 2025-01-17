@@ -135,11 +135,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-### cloudflare ###
-
-# wrangler
-.wrangler
-
 ### yarn ###
 # https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
 

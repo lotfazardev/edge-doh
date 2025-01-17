@@ -1,9 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { CloudflareEnv } from '../../env';
-
 export declare global {
   namespace NodeJS {
-    interface ProcessEnv extends CloudflareEnv {
+    interface ProcessEnv {
       [key: string]: string | undefined;
       NODE_ENV: 'development' | 'production';
       ANALYZE: 'true' | 'false';
