@@ -1,20 +1,34 @@
+import CopyBox from '@src/components/CopyBox';
+import Glass from '@src/components/Glass';
 import AppLayout from '@src/layouts/AppLayout';
+import { headers } from 'next/headers';
 
-function HomePage() {
+async function HomePage() {
+  const headersList = headers();
+  const host = headersList.get('host');
+  const baseUrl = `https://${host}/dns-query`;
+
   return (
-    <AppLayout className="flex h-screen items-center justify-center bg-[#915018]">
-      <div className="max-w-md rounded-lg border-2 border-yellow-900 bg-[#f3e9d2] p-8 shadow-2xl">
-        <h1 className="font-cinzel mb-4 text-2xl font-bold text-yellow-900">
-          Home
-        </h1>
-        <q className="font-serif text-lg italic leading-relaxed text-yellow-900">
-          Freedom is never voluntarily given by the oppressor; it must be
-          demanded by the oppressed.
-        </q>
-        <p className="font-cinzel mt-4 font-semibold text-yellow-900">
-          — Martin Luther King Jr.
-        </p>
-      </div>
+    <AppLayout className="flex h-screen items-center justify-center">
+      <Glass className="max-w-md rounded-lg border-2 p-8 text-[#fff] shadow-2xl">
+        <div>
+          <h1 className="text-center text-3xl font-bold">Edge DoH</h1>
+          <p className="mt-2 text-center text-sm text-gray-300">
+            Secure and Fast DNS over HTTPS (DoH)
+          </p>
+        </div>
+        <div className="mt-6 border-t border-gray-300 pt-6">
+          <div>
+            <p className="text-center text-sm text-gray-300">
+              To use DoH, copy the link below
+            </p>
+          </div>
+          <CopyBox text={baseUrl} />
+          <p className="mt-4 text-center text-xs text-gray-400">
+            Click to copy or manually select and copy the link.
+          </p>
+        </div>
+      </Glass>
     </AppLayout>
   );
 }
