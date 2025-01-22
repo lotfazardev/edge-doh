@@ -3,14 +3,21 @@
 import cn from '@src/utils/helper/cn.helper';
 import CopyIcon from '../CopyIcon';
 import { CopyBoxProps } from './@types';
+import { toast } from 'react-toastify';
 
 function CopyBox(props: CopyBoxProps) {
   const { text, className } = props;
+  const toastId = 'copy-toast';
+
   const handleCopyToClipboard = async () => {
+    if (toast.isActive(toastId)) {
+      return;
+    }
     try {
       await navigator.clipboard.writeText(text);
-    } catch (err) {
-      console.error('Clipboard Error :', err);
+      toast.success('Copied to clipboard!', { toastId });
+    } catch (_err) {
+      toast.error(`Failed to copy`, { toastId });
     }
   };
 
