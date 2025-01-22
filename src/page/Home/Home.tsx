@@ -1,5 +1,6 @@
 import CopyBox from '@src/components/CopyBox';
 import Glass from '@src/components/Glass';
+import Ping from '@src/components/Ping';
 import AppLayout from '@src/layouts/AppLayout';
 import { headers } from 'next/headers';
 
@@ -24,9 +25,7 @@ async function HomePage() {
             </p>
           </div>
           <CopyBox text={baseUrl} />
-          <p className="mt-4 text-center text-xs text-gray-400">
-            Click to copy or manually select and copy the link.
-          </p>
+          <Ping domain="google.com" />
         </div>
       </Glass>
     </AppLayout>
