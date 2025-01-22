@@ -5,14 +5,7 @@ import { GlassProps } from './@types';
 function Glass(props: GlassProps) {
   const { className, children, ...rest } = props;
   return (
-    <div
-      className={cn(
-        'border',
-        'border-[#ffffff4d] bg-[#ffffff33] lg:backdrop-blur',
-        className,
-      )}
-      {...rest}
-    >
+    <div className={cn('glass', className)} {...rest}>
       {children}
     </div>
   );
