@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Gradient } from './gradient/gradient';
 import styles from './styles.module.css';
 import clsx from 'clsx';
 import { MeshProps } from './@types/index';
 import cn from '@src/utils/helper/cn.helper';
+import Gradient from './utils/class/Gradient';
 
 function Mesh(props: MeshProps) {
   const { children, className, id = 'gradient-canvas', ...rest } = props;
