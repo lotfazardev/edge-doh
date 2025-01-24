@@ -1,10 +1,10 @@
 import { ElementProps } from '@src/@types';
 
-export interface PingProps extends ElementProps<HTMLParagraphElement> {
+export interface PingBoxProps extends ElementProps<HTMLParagraphElement> {
   domain: string;
 }
 
-export type PingState = {
+export type PingBoxState = {
   anyError?: boolean;
   ping: number;
   ip: string;

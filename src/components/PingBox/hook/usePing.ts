@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { PingState } from '../@types';
 import DoH from '@src/utils/class/DoH';
+import { PingBoxState } from '../@types';
 
 export function usePing(domain: string) {
-  const [{ ping, ip, anyError }, setState] = useState<PingState>({
+  const [{ ping, ip, anyError }, setState] = useState<PingBoxState>({
     ping: 0,
     ip: '',
   });

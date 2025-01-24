@@ -1,9 +1,9 @@
 'use client';
 
-import { PingProps } from './@types';
+import { PingBoxProps } from './@types';
 import { usePing } from './hook/usePing';
 
-function Ping(props: PingProps) {
+function PingBox(props: PingBoxProps) {
   const { domain } = props;
   const [ping, ip, anyError] = usePing(domain);
 
@@ -16,4 +16,4 @@ function Ping(props: PingProps) {
   );
 }
 
-export default Ping;
+export default PingBox;
