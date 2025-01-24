@@ -1,6 +1,6 @@
 import CopyBox from '@src/components/CopyBox';
 import Glass from '@src/components/Glass';
-import Ping from '@src/components/PingBox';
+import PingBox from '@src/components/PingBox';
 import AppLayout from '@src/layouts/AppLayout';
 import { headers } from 'next/headers';
 
@@ -25,7 +25,7 @@ async function HomePage() {
             </p>
           </div>
           <CopyBox text={baseUrl} />
-          <Ping domain="google.com" />
+          <PingBox domain="google.com" />
         </div>
       </Glass>
     </AppLayout>
