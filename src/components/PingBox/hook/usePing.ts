@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import DoH from '@src/utils/class/DoH';
 import { PingBoxState } from '../@types';
 
-export function usePing(domain: string) {
+export function usePing(domain: string): [number, string, boolean | undefined] {
   const [{ ping, ip, anyError }, setState] = useState<PingBoxState>({
     ping: 0,
     ip: '',
