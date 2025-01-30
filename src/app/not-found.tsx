@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { sharedOg } from './shared-metadata';
 
 export const metadata: Metadata = {
-  title: 'Edge DoH | Not Founed',
+  title: 'Edge DoH | Not Found',
   openGraph: {
     ...sharedOg,
   },
