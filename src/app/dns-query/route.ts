@@ -1,3 +1,4 @@
+import { dohOrigins } from '@src/settings';
 import clg from '@src/utils/helper/clg.helper';
 
 export const runtime = 'edge';
@@ -5,13 +6,7 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
   const baseUrl = new URL(request.url);
-  const origins = [
-    'dns.google',
-    'cloudflare-dns.com',
-    'dns.quad9.net',
-    'dns.adguard.com',
-    'doh.opendns.com',
-  ];
+  const origins = dohOrigins;
 
   async function fetchFromOrigin(origin: string) {
     baseUrl.host = origin;
